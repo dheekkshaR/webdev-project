@@ -10,6 +10,7 @@ import PersonDetail from './details-page/PersonDetail';
 
 import SearchPage from './search-page'
 import BrowsePage  from './browse-page';
+import ProfilePage from './profile/profilePage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/details/:id" element={<div className="movie-wrapper"><Movie /></div>} />
             <Route path="/search" element={<SearchPage/>} />
             <Route path="/browse" element={<BrowsePage/>} />
+            <Route path="/profile" element={<ProfilePage/>} />
         </Routes>
         </Router>
     </>  
