@@ -10,7 +10,7 @@ import PersonDetail from './details-page/PersonDetail';
 
 import SearchPage from './search-page'
 import BrowsePage  from './browse-page';
-import ProfilePage from './profile/profilePage';
+import ProfilePage from './profile-page/profilePage';
 
 function App() {
   return (
