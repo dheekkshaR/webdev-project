@@ -6,7 +6,7 @@ import {useEffect, useContext, useState} from 'react';
 //components
 import Nav from './navigation-bar'
 import Movie from './details-page/detailspage';
-
+import Register from './users/register'
 
 function App() {
   return (
@@ -17,6 +17,7 @@ function App() {
             <Route path="/" element={<h1>Home</h1>} />
             <Route path="/about" element={<h1>About</h1>} />
             <Route path="/details/:id" element={<div className="movie-wrapper"><Movie /></div>} />
+            <Route path="/register" element={<Register/>}/>
 
         </Routes>
         </Router>
