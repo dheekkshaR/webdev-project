@@ -1,10 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-import {createUserThunk,
+import {
+    createUserThunk,
     deleteUserThunk,
     findUsersThunk,
     findUserByIdThunk,
-    updateUserThunk
+    updateUserThunk, loginUserThunk
 } from "./services/user-thunks";
 
 var templateUser = {
@@ -31,6 +32,7 @@ var templateUser = {
 const initialState = {
     id:"",
     username:"",
+    password:"",
     currentUser:templateUser,
     loggedIn:"false",
     users: [],
@@ -65,14 +67,18 @@ const usersSlice = createSlice({name: 'users',
 
         [findUsersThunk.pending]: (state) => {
             state.loading = true
+            console.log("pending")
             state.users = []
         },
         [findUsersThunk.fulfilled]: (state, {payload}) => {
             state.loading = false
+            console.log("success")
             state.users = payload
         },
         [findUsersThunk.rejected]: (state) => {
             state.loading = false
+            console.log("rejected")
+            state.users = []
         },
         [findUserByIdThunk.pending]: (state) => {
             state.loading = true
@@ -86,6 +92,29 @@ const usersSlice = createSlice({name: 'users',
             state.loading = false
             state.currentUser=templateUser
         },
+        [loginUserThunk.pending]: (state) => {
+            state.loading = true
+            state.currentUser = templateUser
+            state.username=""
+            state.password=""
+        },
+        [loginUserThunk.fulfilled]: (state, {payload}) => {
+            state.loading = false
+            state.currentUser = payload
+            state._id=payload._id
+            state.username=payload.username
+            state.password=payload.password
+            console.log("satisified");
+            console.log(state._id+"satisified"+state.username);
+        },
+        [loginUserThunk.rejected]: (state) => {
+            state.loading = false
+            state.currentUser= templateUser
+            state.username=""
+            state.password=""
+        },
+
+
         [deleteUserThunk.fulfilled]:
             (state, {payload}) => {
                 state.loading = false
@@ -113,9 +142,5 @@ const usersSlice = createSlice({name: 'users',
 });
 
 //export const {createTuit, deleteTuit} = tuitsSlice.actions;
-export const {
-
-    setLoggedInUser,
-    logout
-}=usersSlice.actions;
+export const {setLoggedInUser, logout}=usersSlice.actions;
 export default usersSlice.reducer;

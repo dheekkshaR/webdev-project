@@ -30,15 +30,15 @@ export const createUserThunk = createAsyncThunk(
 
 
 export const deleteUserThunk = createAsyncThunk(
-    'tuits/deleteUser',
-    async (tuitId) => {
-        await service.deleteUser(uid)
-        return tuitId
+    'users/deleteUser',
+    async (_id) => {
+        await service.deleteUser(_id)
+        return _id
     })
 
 
 export const updateUserThunk = createAsyncThunk(
-    'tuits/updateUser',
+    'users/updateUser',
     async (user) => {
         return await service.updateUser(user)
     }
