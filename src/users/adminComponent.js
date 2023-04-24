@@ -19,9 +19,9 @@ const UsersList = () => {
 
     return (
         <>
-            <p style={{ color: "white" }}>
-                Hiiiiii start
-            </p>
+            <h4 class="text-bg-light p-3" style={{ color: "white" }}>
+                List of users
+            </h4>
 
         <div className="list-group">
             {

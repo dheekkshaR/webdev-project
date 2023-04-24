@@ -90,10 +90,23 @@ const Register = () => {
             firstName:firstName1,
             lastName:lastName1
         }
-
-
+        console.log(newUser);
         dispatch(createUserThunk(newUser));
-
+        setUsername('');
+        setEmail('');
+        setPassword('');
+        setType('');
+        setPhone('');
+        setAddress('');
+        setAge('');
+        setGender('');
+        setTagline('');
+        setDOB('');
+        setBio('');
+        setfavouriteGenre('');
+        setfirstName('');
+        setlastName('');
+        navigate("/login");
     }
 
 
@@ -131,7 +144,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className=" form-group form-outline">
-                                                <label>Lastname :</label>
+                                                <label  class=" text-white">Lastname :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -140,7 +153,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Phone :</label>
+                                                <label  class=" text-white">Phone :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -149,7 +162,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Age :</label>
+                                                <label  class=" text-white">Age :</label>
                                                 <input
                                                     type="number"
                                                     className="form-control mb-4"
@@ -158,7 +171,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Gender :</label>
+                                                <label  class=" text-white">Gender :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -167,7 +180,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Address :</label>
+                                                <label  class=" text-white">Address :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -176,7 +189,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Bio :</label>
+                                                <label  class=" text-white">Bio :</label>
                                                 <input
                                                     type="textarea"
                                                     className="form-control mb-4"
@@ -185,7 +198,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Tagline :</label>
+                                                <label  class=" text-white">Tagline :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -194,7 +207,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>Genre :</label>
+                                                <label  class=" text-white">Genre :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -203,7 +216,7 @@ const Register = () => {
                                                 />
                                             </div>
                                             <div className="form-group form-outline">
-                                                <label>DOB  :</label>
+                                                <label  class=" text-white">DOB  :</label>
                                                 <input
                                                     type="text"
                                                     className="form-control mb-4"
@@ -213,7 +226,7 @@ const Register = () => {
                                             </div>
 
                                             <div className="form-group form-outline">
-                                                <label>Email address:</label>
+                                                <label  class=" text-white">Email address:</label>
                                                 <input
                                                     required="yes"
                                                     type="email"
@@ -224,7 +237,7 @@ const Register = () => {
                                             </div>
 
                                             <div className="form-group d-md-flex justify-content-start align-items-center mb-2 mt-2 py-2">
-                                                <label className="mb-0 me-4">Type: </label>
+                                                <label className="mb-0 me-4 text-white">Type: </label>
                                                 <div className="form-check form-check-inline mb-0 me-4">
                                                     <input
                                                         className="form-check-input"
@@ -273,7 +286,7 @@ const Register = () => {
                                             </div>
 
                                             <div className="form-group form-outline">
-                                                <label>Password:</label>
+                                                <label  class=" text-white">Password:</label>
                                                 <input
                                                     type="password"
                                                     className="form-control mb-4"
@@ -290,7 +303,8 @@ const Register = () => {
                                                 <div className="d-grid">
                                                     <button
                                                         type="submit"
-                                                        className="btn btn-info btn-md ms-2"
+                                                        className="btn btn-info btn-md ms-2 bg-color-red fg-color-red"
+                                                        style={{background: "red"}}
                                                     >
                                                         Register
                                                     </button>

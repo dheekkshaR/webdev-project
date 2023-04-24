@@ -98,22 +98,36 @@ const usersSlice = createSlice({name: 'users',
             state.currentUser = templateUser
             state.username=""
             state.password=""
+            console.log("pending")
         },
         [loginUserThunk.fulfilled]: (state, {payload}) => {
             state.loading = false
-            state.currentUser = payload
-            state._id=payload._id
-            state.username=payload.username
-            state.password=payload.password
-            console.log("satisified");
-            console.log(state._id+"satisified"+state.username);
+            if(payload){
+                state.currentUser = payload
+                console.log("fulfilled")
+                console.log(payload)
+                state._id=payload._id
+                state.username=payload.username
+                state.password=payload.password
+                state.loggedIn= "true"
+                console.log("satisified");
+                //console.log(state._id+"satisified"+state.username);
+                alert("Logged In "+state.username)
+            }
+            else{
+                console.log("no user like that")
+            }
+
         },
         [loginUserThunk.rejected]: (state) => {
             state.loading = false
             state.currentUser= templateUser
             state.username=""
             state.password=""
+            console.log("rejected")
+
         },
+
 
 
         [deleteUserThunk.fulfilled]:
@@ -121,6 +135,29 @@ const usersSlice = createSlice({name: 'users',
                 state.loading = false
                 state.users = state.users
                     .filter(t => t._id !== payload)
+                console.log("Delete fulfilled")
+            },
+        [deleteUserThunk.rejected]:
+            (state, {payload}) => {
+                state.loading = false
+                // state.users = state.users
+                //     .filter(t => t._id !== payload)
+                console.log("Delete failed")
+            },
+        [deleteUserThunk.pending]:
+            (state, {payload}) => {
+                state.loading = true
+               console.log("Delete pending")
+            },
+        [createUserThunk.pending]:
+            (state, {payload}) => {
+            state.loading=true
+                console.log("pending")
+            },
+        [createUserThunk.rejected]:
+            (state, {payload}) => {
+                state.loading=false
+                console.log("rejected")
             },
         [createUserThunk.fulfilled]:
             (state, {payload}) => {
@@ -128,6 +165,8 @@ const usersSlice = createSlice({name: 'users',
                 state.users.push(
                     payload
                 )
+                console.log("create fulfilled")
+                alert("New user registered!")
             },
         [updateUserThunk.fulfilled]:
             (state, {payload}) => {

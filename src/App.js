@@ -1,6 +1,8 @@
 import './App.css';
 import React from 'react';
+
 import {BrowserRouter as Router, Routes, Route}  from 'react-router-dom';
+
 import {useEffect, useContext, useState} from 'react';
 import {Provider} from "react-redux";
 //components

@@ -8,21 +8,19 @@ const UserItem = ({users}) => {
         console.log(id);
         dispatch(deleteUserThunk(id));
     }
+    const pic='../../public/images/image2.jpg'
 
 
     return (
         <>
-            <p style={{ color: "white" }}>
-                Hiiiiii
-            </p>
+
 
             {users && <li key={users._id} className="list-group-item border">
 
             <div className="row">
 
                 <div className="col-1 "  >
-                    <img className="wd-round-image"
-                         src='../../public/images/emptyprofilepic.png' height="35px" width="35px"  alt=""/>
+                    <i className='bi bi-person-circle fa-2x' ></i>
                 </div>
 
                 <div className="col-11">
@@ -31,7 +29,7 @@ const UserItem = ({users}) => {
                         <b>{users.username}
                         </b>
 
-                        <i className="bi bi-x-lg float-end text-light"
+                        <i className="bi bi-x-lg float-end fg-color-white"
                            onClick={() => deleteUserHandler(users._id)}> </i>
                     </div>
                     <div className="ms-3 ms-lg-0 text-white ">

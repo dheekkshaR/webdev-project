@@ -19,12 +19,17 @@ export const findUserById = async (userId) => {
 }
 export const createUser = async (user) => {
     const response = await axios.post(USERS_API, user)
+    console.log("createUser in services")
     return response.data;
 }
 
-export const login = async (username, password) => {
+export const login = async ({username, password}) => {
     let body = { username, password };
-    let response = await axios.get(`${USERS_API}/login/${username}/${password}`, body);
+    const getStringLogin=`${USERS_API}/login/${username}/${password}`
+        //USERS_API+"/login/"+username+"/"+password;
+    //let response = await axios.get(`${USERS_API}/login/${username}/${password}`);
+    let response = await axios.get(getStringLogin)
+    console.log(response.data)
     return response.data;
 };
 
@@ -36,7 +41,9 @@ export const login = async (username, password) => {
 
 
 export const deleteUser = async (uid) => {
-    const response = await axios.delete(`${USERS_API}/${uid}`)
+    const response = await axios.delete(`${USERS_API}/delete/${uid}`)
+    console.log(response)
+    console.log(response.data)
     return response.data
 }
 

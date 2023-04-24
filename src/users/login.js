@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { login } from "./services/user-service";
 import {useNavigate, Link, Route} from "react-router-dom";
 import { Navigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import Form from "react-bootstrap/Form";
 import {setLoggedInUser} from "./users-reducer";
 import {deleteUserThunk, findUserByIdThunk, loginUserThunk} from "./services/user-thunks";
@@ -10,6 +10,7 @@ import {deleteUserThunk, findUserByIdThunk, loginUserThunk} from "./services/use
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    //const {_id,idSetter }= useSelector(state => state.usersMain.initialState)
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -18,17 +19,21 @@ const Login = () => {
 
         e.preventDefault();
         //login(username, password)
-        dispatch(loginUserThunk(username,password))
+        dispatch(loginUserThunk({username, password}))
         .then((res) => {
-            if (username === '') {
+            if (!res.payload ) {
+                console.log(username);
+                console.log(password);
                 alert("Invalid credentials! Please enter valid credentials!");
             }
             else{
                 console.log("Logged in successfully!!!")
-                //console.log(res.body)
-                dispatch(setLoggedInUser());
-                return <Navigate replace to="/" />
+                //console.log(_id)
+                console.log(res)
+                                    // dispatch(setLoggedInUser());
+                //return <Navigate replace to="/" />
                 //navigate("/");
+                navigate("/");
             }
         });
     };
@@ -69,7 +74,8 @@ const Login = () => {
 
                                             <div className="pt-1 mb-4">
                                                 <button
-                                                    className="btn btn-info btn-block"
+                                                    className="btn btn-info btn-block "
+                                                    style={{background: "red"}}
                                                     type="submit"
                                                 >
                                                     Sign In
@@ -77,7 +83,7 @@ const Login = () => {
                                             </div>
                                             <p class="mb-5 text-white" style={{ color: "#393f81" }}>
                                                 New to bingit?
-                                                <Link class = "text-white " to="/sign-up"> Sign Up</Link>
+                                                <Link class = "text-white " to="/register"> Sign Up</Link>
                                             </p>
                                         </Form>
                                     </div>

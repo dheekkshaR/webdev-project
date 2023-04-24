@@ -42,8 +42,8 @@ export const findUserByIdThunk = createAsyncThunk(
 )
 export const loginUserThunk = createAsyncThunk(
     'users/loginUser',
-    async (username,password) => {
-        return await service.login(username,password)
+    async ({username, password}) => {
+        return await service.login({username, password})
     })
 
 export const createUserThunk = createAsyncThunk(
@@ -62,6 +62,7 @@ export const deleteUserThunk = createAsyncThunk(
     'users/deleteUser',
     async (_id) => {
         await service.deleteUser(_id)
+        console.log("thunk after calling delete")
         return _id
     })
 
