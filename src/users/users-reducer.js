@@ -74,6 +74,7 @@ const usersSlice = createSlice({name: 'users',
             state.loading = false
             console.log("success")
             state.users = payload
+            console.log(state.users)
         },
         [findUsersThunk.rejected]: (state) => {
             state.loading = false

@@ -107,11 +107,11 @@ const Register = () => {
                                 <div className="row g-0">
 
 
-                                    <div className="col-xl-6 text-white">
+                                    <div className="col-xl-6 text-white justify-content-center" style={{ color: "white" }}>
                                         <div className="card-body p-4 text-black">
                                             <h3 className="mb-3 text-uppercase">Sign Up</h3>
 
-                                            <div class="form-outline ">
+                                            <div class=" form-group form-outline ">
                                                 <label class="text-white">Username:</label>
                                                 <input
                                                     required="yes"
@@ -121,7 +121,7 @@ const Register = () => {
                                                     onChange={(e) => setUsername(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className=" form-group form-outline">
                                                 <label class=" text-white">Firstname :</label>
                                                 <input
                                                     type="text"
@@ -130,7 +130,7 @@ const Register = () => {
                                                     onChange={(e) => setfirstName(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className=" form-group form-outline">
                                                 <label>Lastname :</label>
                                                 <input
                                                     type="text"
@@ -139,7 +139,7 @@ const Register = () => {
                                                     onChange={(e) => setlastName(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Phone :</label>
                                                 <input
                                                     type="text"
@@ -148,7 +148,7 @@ const Register = () => {
                                                     onChange={(e) => setPhone(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Age :</label>
                                                 <input
                                                     type="number"
@@ -157,7 +157,7 @@ const Register = () => {
                                                     onChange={(e) => setAge(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Gender :</label>
                                                 <input
                                                     type="text"
@@ -166,7 +166,7 @@ const Register = () => {
                                                     onChange={(e) => setGender(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Address :</label>
                                                 <input
                                                     type="text"
@@ -175,7 +175,7 @@ const Register = () => {
                                                     onChange={(e) => setAddress(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Bio :</label>
                                                 <input
                                                     type="textarea"
@@ -184,7 +184,7 @@ const Register = () => {
                                                     onChange={(e) => setBio(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Tagline :</label>
                                                 <input
                                                     type="text"
@@ -193,7 +193,7 @@ const Register = () => {
                                                     onChange={(e) => setTagline(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Genre :</label>
                                                 <input
                                                     type="text"
@@ -202,7 +202,7 @@ const Register = () => {
                                                     onChange={(e) => setfavouriteGenre(e.target.value)}
                                                 />
                                             </div>
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>DOB  :</label>
                                                 <input
                                                     type="text"
@@ -212,7 +212,7 @@ const Register = () => {
                                                 />
                                             </div>
 
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Email address:</label>
                                                 <input
                                                     required="yes"
@@ -223,7 +223,7 @@ const Register = () => {
                                                 />
                                             </div>
 
-                                            <div className="d-md-flex justify-content-start align-items-center mb-2 mt-2 py-2">
+                                            <div className="form-group d-md-flex justify-content-start align-items-center mb-2 mt-2 py-2">
                                                 <label className="mb-0 me-4">Type: </label>
                                                 <div className="form-check form-check-inline mb-0 me-4">
                                                     <input
@@ -272,7 +272,7 @@ const Register = () => {
                                                 </div>
                                             </div>
 
-                                            <div className="form-outline">
+                                            <div className="form-group form-outline">
                                                 <label>Password:</label>
                                                 <input
                                                     type="password"
@@ -286,7 +286,7 @@ const Register = () => {
 
 
 
-                                            <div className="d-flex justify-content-end pt-3">
+                                            <div className="form-group d-flex justify-content-end pt-3">
                                                 <div className="d-grid">
                                                     <button
                                                         type="submit"
