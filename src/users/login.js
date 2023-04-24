@@ -43,12 +43,12 @@ const Login = () => {
 
 
                                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                    <div class="card-body p-4 p-lg-5 text-black">
+                                    <div class="card-body p-4 p-lg-5 text-white">
                                         <Form onSubmit={handleSubmit}>
                                             <h3 className="mb-3 text-uppercase">Sign In</h3>
 
                                             <div className="form-outline mb-4">
-                                                <label className="form-label">Username:</label>
+                                                <label className="form-label text-white">Username:</label>
                                                 <input
                                                     type="text"
                                                     className="form-control"
@@ -58,7 +58,7 @@ const Login = () => {
                                             </div>
 
                                             <div className="form-outline mb-4">
-                                                <label className="form-label">Password:</label>
+                                                <label className="form-label text-white">Password:</label>
                                                 <input
                                                     type="password"
                                                     className="form-control"
@@ -75,9 +75,9 @@ const Login = () => {
                                                     Sign In
                                                 </button>
                                             </div>
-                                            <p class="mb-5" style={{ color: "#393f81" }}>
+                                            <p class="mb-5 text-white" style={{ color: "#393f81" }}>
                                                 New to bingit?
-                                                <Link to="/sign-up"> Sign Up</Link>
+                                                <Link class = "text-white " to="/sign-up"> Sign Up</Link>
                                             </p>
                                         </Form>
                                     </div>
