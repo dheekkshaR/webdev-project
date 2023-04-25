@@ -38,12 +38,6 @@ const initialState = {
     users: [],
     loading: false
 }
-
-
-
-
-
-
 const usersSlice = createSlice({name: 'users',
     initialState: initialState,
     reducers:{
