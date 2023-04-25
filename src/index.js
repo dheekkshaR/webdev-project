@@ -4,9 +4,19 @@ import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { store } from "./store";
-
+import { configureStore }
+    from '@reduxjs/toolkit';
+import bingeitReducer from "./store";
+import usersReducer from "./users/users-reducer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+
+const store = configureStore({
+  reducer: {
+    bingeit: bingeitReducer,
+    user: usersReducer,
+  },
+});
 root.render(
   <React.StrictMode>
     <Provider store={store}>

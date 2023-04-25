@@ -22,34 +22,18 @@ import { fetchUserByIdThunk } from './services/user-thunks';
 import SearchPage from './search-page'
 import BrowsePage  from './browse-page';
 
+
+import UsersList from "./users/adminComponent";
+import Register from './users/register'
+import Login from "./users/login";
+import Movie from './home';
+
 function App() {
-const dispatch = useDispatch();
-const [loading, setLoading] = useState(true);
+//const dispatch = useDispatch();
+const [loading, setLoading] = useState(false);
 
-  console.log('user');
-    const { user } = useSelector((state) => state.user);
-  useEffect(() => {
-    const fetchUserData = async () => {
-      // Comment out or remove the hard-coded user ID
-       const id = "6441a68499859e1107f4aff2";
 
-      // Check if the user ID is not null before dispatching the fetchUserByIdThunk
-//      const id = false
-      if (id) {
-        console.log('user2');
-        const userData = await dispatch(fetchUserByIdThunk(id));
-        console.log('user3');
-        console.log(userData);
-        setLoading(false); // Set loading to false after fetching the user data
 
-        // Do something with userData, e.g., store it in the Redux store or local state
-      } else {
-        setLoading(false); // Set loading to false as there is no user to fetch
-      }
-    };
-
-    fetchUserData();
-  }, [dispatch]);
   return (
     <>
     {loading ? (
@@ -58,7 +42,7 @@ const [loading, setLoading] = useState(true);
       <Router>
       <Nav/>
         <Routes>
-            <Route path="/" element={<HomeComponent/>} />
+            <Route path="/" element={<Movie/>} />
             <Route path="/about" element={<h1>About</h1>} />
             <Route path="/favorites" element={<FavoriteList/>} />
             <Route path="/person/:id" element={<PersonDetail/>} />
@@ -68,6 +52,9 @@ const [loading, setLoading] = useState(true);
             <Route path="/profile" element={<ProfilePage/>} />
             <Route path="/provider" element={<ProviderPage/>} />
             <Route path="/profile/:id" element={<ProfileDetail/>} />
+         <Route path="/register" element={<Register/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/adminShow" element={<UsersList/>}/>
         </Routes>
         </Router>
         )}
