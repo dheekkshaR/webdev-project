@@ -18,7 +18,7 @@ const NavigationBar = () => {
   const [showNotificationDropdown, setShowNotificationDropdown] =
     useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.user.currentUser);
   const navigate = useNavigate();
 
   const handleSearchIconClick = () => {
@@ -62,7 +62,7 @@ const NavigationBar = () => {
   const handleProviderList = () => {
     navigate("/provider");
   };
-
+  console.log(user)
   return (
     <div className="navbar_main">
       <div className="netflix_logo">
@@ -84,7 +84,7 @@ const NavigationBar = () => {
         <div className="item" onClick={handleMyListClick}>
           My Favorites
         </div>
-        {user && user.type === "PROVIDER" && (
+        {user && user.type === "provider" && (
           <div className="item" onClick={handleProviderList}>
             Provider List
           </div>
