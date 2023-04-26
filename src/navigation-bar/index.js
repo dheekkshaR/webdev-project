@@ -18,7 +18,8 @@ const NavigationBar = () => {
   const [showNotificationDropdown, setShowNotificationDropdown] =
     useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-  const user = useSelector((state) => state.user.user);
+  //const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.usersMain.currentUser);
   const navigate = useNavigate();
 
   const handleSearchIconClick = () => {

@@ -1,11 +1,22 @@
+
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import usersMainReducer from './users/users-reducer'
+import { configureStore }
+    from '@reduxjs/toolkit';
+import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import "bootswatch/dist/cyborg/bootstrap.min.css";
 import React from "react";
-import ReactDOM from "react-dom/client";
+
 import { Provider } from "react-redux";
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { store } from "./store";
 
+import { store } from "./store";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
