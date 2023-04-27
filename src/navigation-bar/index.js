@@ -95,7 +95,7 @@ const NavigationBar = () => {
         )}
         {user && user.type === "admin" && (
             <div className="item" onClick={handleAdminList}>
-              Provider List
+              Users List for admin
             </div>
         )}
 

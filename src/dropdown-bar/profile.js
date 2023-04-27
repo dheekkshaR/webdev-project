@@ -5,6 +5,9 @@ import {useSelector} from "react-redux";
 
 const ProfileDropdown = () => {
 const [isOpen, setIsOpen] = useState(false);
+console.log("ProfileDropdown");
+const user = useSelector(state => state.user);
+console.log(user);
 const navigate = useNavigate();
 const handleButtonClick = () => {
 setIsOpen(!isOpen);
@@ -38,18 +41,26 @@ setIsOpen(false);
 return (
 <div className="profile-dropdown">
 <ul>
+    {user.loggedIn == "true" && (
 <li>
 <div onClick={handleAccount}>Account</div>
 </li>
+        )}
+    {user.loggedIn == "false" && (
     <li>
         <div onClick={handleRegister}>Register</div>
     </li>
+        )}
+    {user.loggedIn == "false" && (
     <li>
         <div onClick={handleSignIn}>Sign in</div>
     </li>
+        )}
+    {user.loggedIn == "true" && (
 <li>
 <div onClick={handleSignOut}>Sign Out</div>
 </li>
+        )}
 </ul>
 </div>
 );

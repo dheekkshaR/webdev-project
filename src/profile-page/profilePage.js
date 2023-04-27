@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./profile.css";
 import FavoriteList from "../details-page/FavoriteList";
+import {useSelector} from "react-redux";
 
 const ProfilePage = () => {
-  const [name, setName] = useState("John Doe");
+  const user = useSelector((state) => state.user.currentUser);
+  const [name, setName] = useState(user.firstName + " " + user.lastName);
   const [image, setImage] = useState("https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png");
-  const [phoneNumber, setPhoneNumber] = useState("123-456-7890");
-  const [address, setAddress] = useState("123 Main St, Anytown USA");
+  const [phoneNumber, setPhoneNumber] = useState(user.phone);
+  const [address, setAddress] = useState(user.address);
   const [membershipInfo, setMembershipInfo] = useState("Basic");
-
+  console.log("user in profile: ", user);
   const [editMode, setEditMode] = useState(false);
 
   const handleNameChange = (event) => {
